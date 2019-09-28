@@ -17,6 +17,23 @@ function get() {
 }
 get();
 
+function addTasksToTheDOM(task) {
+  // Set the variables
+  const template = document.querySelector("#template").content;
+  const clone = template.cloneNode(true);
+  const parent = document.querySelector(".toDoList");
+
+  // Add content to the template
+  document.querySelector(".taskName").textContent = task.taskName;
+  document.querySelector(".time").textContent = task.time;
+  document.querySelector(".day").textContent = task.day;
+  document.querySelector(".date").textContent = task.date;
+  document.querySelector(".important").textContent = task.important;
+
+  // Append the clone to the parent
+  parent.appendChild(clone);
+}
+
 function post() {
   const data = {
     task: "drink more water",
