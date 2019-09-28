@@ -19,7 +19,6 @@ function get() {
       console.log(tasks);
     });
 }
-get();
 
 function addTasksToTheDOM(task) {
   // Set the variables
@@ -28,11 +27,11 @@ function addTasksToTheDOM(task) {
   const parent = document.querySelector(".toDoList");
 
   // Add content to the template
+  clone.querySelector(".toDoListContainer").dataset.taskid = task._id;
   clone.querySelector(".taskName").textContent = task.task;
   clone.querySelector(".time").textContent = task.time;
   clone.querySelector(".date").textContent = task.date;
   clone.querySelector(".important").textContent = task.important;
-  clone.querySelector(".toDoListContainer").dataset.taskId = task._id;
 
   clone.querySelector(".btnRemoveTask").addEventListener("click", () => {
     console.log(task._id);
@@ -42,6 +41,7 @@ function addTasksToTheDOM(task) {
   // Append the clone to the parent
   parent.prepend(clone);
 }
+get();
 
 function post() {
   const data = {
@@ -51,7 +51,7 @@ function post() {
     task: form.elements.task.value,
     date: form.elements.date.value,
     time: form.elements.time.value
-    // important: form.elements.important.value
+    // important: form.elements.importantStatus.value
   };
 
   const postData = JSON.stringify(data);
@@ -79,7 +79,11 @@ function deleteIt(id) {
     }
   })
     .then(res => res.json())
-    .then(data => console.log(data));
+    .then(data => {
+      document
+        .querySelector(`.toDoListContainer[data-taskid="${id}"]`)
+        .remove();
+    });
 }
 
 // Global events
