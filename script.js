@@ -13,22 +13,25 @@ function get() {
     }
   })
     .then(e => e.json())
-    .then(e => console.log(e));
+    .then(tasks => {
+      tasks.forEach(addTasksToTheDOM);
+      console.log(tasks);
+    });
 }
 get();
 
-function addTasksToTheDOM(task) {
+function addTasksToTheDOM(taskE) {
   // Set the variables
   const template = document.querySelector("#template").content;
   const clone = template.cloneNode(true);
   const parent = document.querySelector(".toDoList");
 
   // Add content to the template
-  document.querySelector(".taskName").textContent = task.taskName;
-  document.querySelector(".time").textContent = task.time;
-  document.querySelector(".day").textContent = task.day;
-  document.querySelector(".date").textContent = task.date;
-  document.querySelector(".important").textContent = task.important;
+  clone.querySelector(".taskName").textContent = taskE.task;
+  clone.querySelector(".time").textContent = taskE.time;
+  clone.querySelector(".day").textContent = taskE.day;
+  clone.querySelector(".date").textContent = taskE.date;
+  clone.querySelector(".important").textContent = taskE.important;
 
   // Append the clone to the parent
   parent.appendChild(clone);
@@ -53,5 +56,5 @@ function post() {
   })
     .then(res => res.json())
     .then(data => console.log(data));
+  addTasksToTheDOM(data);
 }
-post();
