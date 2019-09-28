@@ -29,7 +29,6 @@ function addTasksToTheDOM(task) {
   // Add content to the template
   clone.querySelector(".taskName").textContent = task.task;
   clone.querySelector(".time").textContent = task.time;
-  clone.querySelector(".day").textContent = task.day;
   clone.querySelector(".date").textContent = task.date;
   clone.querySelector(".important").textContent = task.important;
 
