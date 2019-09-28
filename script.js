@@ -2,6 +2,7 @@
 
 const link = "https://singers-373b.restdb.io/rest/todo";
 const corskey = "5d8a48a2fd86cb75861e26eb";
+const form = document.querySelector("form");
 
 function get() {
   fetch("https://singers-373b.restdb.io/rest/todo", {
@@ -31,6 +32,7 @@ function addTasksToTheDOM(task) {
   clone.querySelector(".time").textContent = task.time;
   clone.querySelector(".date").textContent = task.date;
   clone.querySelector(".important").textContent = task.important;
+  clone.querySelector(".toDoListContainer").dataset.taskId = task._id;
 
   clone.querySelector(".btnRemoveTask").addEventListener("click", () => {
     console.log(task._id);
@@ -38,14 +40,18 @@ function addTasksToTheDOM(task) {
   });
 
   // Append the clone to the parent
-  parent.appendChild(clone);
+  parent.prepend(clone);
 }
 
 function post() {
   const data = {
-    task: "drink more water",
-    date: "2019-09-27T23:50:31.030Z",
-    important: true
+    // task: "sleeeeeeeeepppppp",
+    // date: "2019-09-27T23:50:31.030Z",
+    // important: true
+    task: form.elements.task.value,
+    date: form.elements.date.value,
+    time: form.elements.time.value
+    // important: form.elements.important.value
   };
 
   const postData = JSON.stringify(data);
@@ -75,3 +81,8 @@ function deleteIt(id) {
     .then(res => res.json())
     .then(data => console.log(data));
 }
+
+// Global events
+document.querySelector(".btnAddTask").addEventListener("click", e => {
+  post();
+});

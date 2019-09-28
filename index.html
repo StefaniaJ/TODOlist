@@ -36,6 +36,12 @@
         </label>
       </form>
 
+      <label for="important">
+        Important status:
+        <input type="radio" id="important" class="first" name="important" value="important"> Important
+        <input type="radio" id="important" name="important" value="important">Not important
+      </label>
+      </form>
 
 
 
@@ -44,7 +50,8 @@
 
 
 
-      <button class="btnAddTask">Add task</button>
+      <!-- Add a new task button -->
+      <button type="submit" class="btnAddTask">Add task</button>
 
       <!-- Here goes the list -->
       <div class="toDoList"></div>
