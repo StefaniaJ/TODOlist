@@ -17,9 +17,9 @@
   </header>
 
   <main>
-    <!-- Forms here -->
+    <!-- Add form here -->
     <div id="formContainer">
-      <form>
+      <form id="addForm">
         <label for="task">
           Task:
           <input type="text" id="task" name="task" placeholder="Add task.." required />
@@ -41,32 +41,68 @@
         <input type="radio" id="importantStatus" class="first" name="importantStatus"> Important
         <input type="radio" id="importantStatus" name="importantStatus">Not important
       </label>
+
+      <!-- Add a new task button -->
+      <button type="submit" name="submit" class="btnAddTask">Add task</button>
       </form>
 
 
 
 
+      <!--Edit form here -->
+      <div id="formContainer">
+        <form id="editForm">
+          <label for="task">
+            Task:
+            <input type="text" id="task" name="task" placeholder="Add task.." required />
+          </label>
+
+          <label for="date">
+            Date:
+            <input type="date" id="date" name="date" />
+          </label>
+
+          <label for="time">
+            Time:
+            <input type="time" id="time" name="time" />
+          </label>
+        </form>
+
+        <label for="importantStatus">
+          Important status:
+          <input type="radio" id="importantStatus" class="first" name="importantStatus"> Important
+          <input type="radio" id="importantStatus" name="importantStatus">Not important
+        </label>
+
+        <input type="hidden" name="id">
+
+        <!-- Done button -->
+        <button type="submit" name="submit" class="btnAddTask">Done</button>
+        </form>
+        </form>
 
 
 
 
-      <!-- Add a new task button -->
-      <button type="submit" class="btnAddTask">Add task</button>
 
-      <!-- Here goes the list -->
-      <div class="toDoList"></div>
 
-      <!-- Template -->
-      <template id="template">
-        <article class="toDoListContainer">
-          <h3 class="taskName"></h3>
-          <p class="time"></p>
-          <p class="date"></p>
-          <p class="important"></p>
-          <button class="btnRemoveTask">Remove task</button>
-          <button class="btnEditTask">Edit task</button>
-        </article>
-      </template>
+
+
+
+        <!-- Here goes the list -->
+        <div class="toDoList"></div>
+
+        <!-- Template -->
+        <template id="template">
+          <article class="toDoListContainer">
+            <h3 class="taskName"></h3>
+            <p class="time"></p>
+            <p class="day"></p>
+            <p class="important"></p>
+            <button class="btnRemoveTask">Remove task</button>
+            <button class="btnEditTask">Edit task</button>
+          </article>
+        </template>
   </main>
 
   <script src="script.js"></script>
