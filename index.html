@@ -17,21 +17,50 @@
   </header>
 
   <main>
-    <!-- Here goes the list -->
-    <div class="toDoList"></div>
+    <!-- Forms here -->
+    <div id="formContainer">
+      <form>
+        <label for="task">
+          Task:
+          <input type="text" id="task" name="task" placeholder="Add task.." required />
+        </label>
 
-    <!-- Template -->
-    <template id="template">
-      <article class="toDoListContainer">
-        <h3 class="taskName"></h3>
-        <p class="time"></p>
-        <p class="day"></p>
-        <p class="date"></p>
-        <p class="important"></p>
-        <button class="btnRemoveTask">Remove task</button>
-        <button class="btnEditTask">Edit task</button>
-      </article>
-    </template>
+        <label for="date">
+          Date:
+          <input type="date" id="date" name="date" />
+        </label>
+
+        <label for="time">
+          Time:
+          <input type="time" id="time" name="time" />
+        </label>
+      </form>
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Here goes the list -->
+      <div class="toDoList"></div>
+
+      <!-- Template -->
+      <template id="template">
+        <article class="toDoListContainer">
+          <h3 class="taskName"></h3>
+          <p class="time"></p>
+          <p class="day"></p>
+          <p class="date"></p>
+          <p class="important"></p>
+          <button class="btnRemoveTask">Remove task</button>
+          <button class="btnEditTask">Edit task</button>
+        </article>
+      </template>
   </main>
 
   <script src="script.js"></script>
