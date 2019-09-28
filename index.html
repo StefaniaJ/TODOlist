@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TO DO list</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Mansalva&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>TO DO List</h1>
+    </header>
+
+    <main>
+      <!-- Here goes the list -->
+      <div class="toDoList"></div>
+
+      <!-- Template -->
+      <template id="template">
+        <article class="toDoListContainer">
+          <p class="time"></p>
+          <p class="day"></p>
+          <p class="date"></p>
+          <button class="btnRemoveTask">Remove task</button>
+          <button class="btnEditTask">Edit task</button>
+        </article>
+      </template>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
