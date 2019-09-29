@@ -5,24 +5,30 @@
     font-size: 14px;
 }
 
-
 html {
     width: 100vw;
     height: 100vh;
-    background-color: #910cd91f;
     background-size: cover;
-    font-family: 'Mansalva', cursive;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background: #666;
     margin: 1em;
+    background-image: url(images/q.jpg);
+    width: 100%;
+    height: 100%;
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+    background-size: cover;
 }
 
 #title {
     font-family: 'Indie Flower', cursive;
     font-size: 20px;
-    color: #fff;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+
 }
 
 #formContainer {
@@ -31,6 +37,7 @@ body {
     padding: 20px;
     width: 550px;
     margin: auto;
+    margin-bottom: 15px;
 }
 
 input {
@@ -44,9 +51,38 @@ input {
     outline: none;
 }
 
+.modal-content #formContainer {
+    width: 85%;
+}
+
+
+.btnAddTask {
+    background-color: #0000ffd6;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    opacity: 0.8;
+    border-radius: 2%;
+}
+
+
+.done {
+    background-color: #008000c9;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    opacity: 0.8;
+    border-radius: 2%;
+}
+
+
 .toDoList {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(253px, 1fr));
     grid-gap: 1em;
     padding-top: 10px;
 }
@@ -66,28 +102,37 @@ input {
 
 } */
 
-/* .btnRemoveTask {
-    background-color: black;
-    color: white;
-    padding: 8px 10px;
+.btnRemoveTask {
     border: none;
     cursor: pointer;
-    width: 100%;
-    opacity: 0.8;
     position: absolute;
     left: 0px;
     bottom: 0;
-} */
+    background-image: url(images/Trash-icon.png);
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+    margin: 4px;
+}
 
-/* .btnEditTask {
-    background-color: palegreen;
-    color: white;
-    padding: 8px 10px;
+.btnEditTask {
     border: none;
     cursor: pointer;
-    width: 100%;
-    opacity: 0.8;
-} */
+    background-image: url(images/Edit.png);
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 4px;
+}
 
 
 /* ////////  Modal ///////*/
@@ -105,14 +150,13 @@ input {
 
 .modal-content {
     background-color: white;
-    width: 80%;
-    height: 85%;
+    width: 65%;
+    height: 50%;
     margin: auto;
-    margin-top: 5%;
-    overflow: scroll;
+    margin-top: 10%;
     padding: 1em;
     text-align: center;
-
+    padding-top: 40px;
 }
 
 /* /// Close Button /// */
@@ -122,17 +166,19 @@ input {
     font-size: 30px;
     font-weight: bold;
     margin-right: -6px;
-    margin-top: 17px;
+    margin-top: -40px;
 }
 
 .close:hover {
-    color: #000;
+    color: red;
     cursor: pointer;
 }
 
 .hide {
     display: none;
 }
+
+
 
 /* ///////////////////////////////////////// */
 
@@ -162,12 +208,12 @@ input {
 }
 
 .toDoListBg {
-    margin: 1em;
+    /* margin: 1em; */
     float: left;
 }
 
 .taskName {
-    font-size: 140%;
+    font-size: 14px;
     font-weight: bold;
     padding-bottom: 10px;
     font-family: "Reenie Beanie", arial, sans-serif;

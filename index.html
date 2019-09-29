@@ -41,7 +41,7 @@
       </label> -->
 
       <!-- Add a new task button -->
-      <button type="submit" name="submit" class="btnAddTask">Add task</button>
+      <button type="submit" name="submit" class="btnAddTask">+ Add task</button>
     </form>
   </div>
 
@@ -78,7 +78,7 @@
           <input type="hidden" name="id">
 
           <!-- Done button -->
-          <button type="submit" name="submit" class="btnAddTask" id="done">Done</button>
+          <button type="submit" name="submit" class="done" id="done">Done</button>
         </form>
       </div>
     </article>
@@ -91,7 +91,10 @@
 
 
   <!-- Here goes the list -->
-  <div class="toDoList"></div>
+
+  <div class="toDoList">
+  </div>
+
 
   <!-- Template -->
   <template id="template">
@@ -101,8 +104,8 @@
         <!-- <p class="hour"></p>
             <p class="day"></p> -->
         <!-- <p class="status"></p> -->
-        <button class="btnRemoveTask">Remove task</button>
-        <button class="btnEditTask">Edit task</button>
+        <button class="btnRemoveTask"></button>
+        <button class="btnEditTask"></button>
       </div>
     </article>
   </template>
