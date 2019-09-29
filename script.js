@@ -4,6 +4,8 @@ const link = "https://singers-373b.restdb.io/rest/todo";
 const corskey = "5d8a48a2fd86cb75861e26eb";
 const form = document.querySelector("#addForm");
 const editForm = document.querySelector("#editForm");
+const modal = document.querySelector(".modal-bg");
+const close = document.querySelector(".close");
 
 function get() {
   fetch("https://singers-373b.restdb.io/rest/todo", {
@@ -30,9 +32,9 @@ function addTasksToTheDOM(task) {
   // Add content to the template
   clone.querySelector(".toDoListContainer").dataset.taskid = task._id;
   clone.querySelector(".taskName").textContent = task.task;
-  clone.querySelector(".time").textContent = task.time;
-  clone.querySelector(".day").textContent = task.day;
-  clone.querySelector(".important").textContent = task.important;
+  // clone.querySelector(".hour").textContent = task.hour;
+  // clone.querySelector(".day").textContent = task.day;
+  // clone.querySelector(".status").textContent = task.status;
 
   // Button to remove a task
   clone.querySelector(".btnRemoveTask").addEventListener("click", () => {
@@ -43,6 +45,7 @@ function addTasksToTheDOM(task) {
   // Button to edit a task
   clone.querySelector(".btnEditTask").addEventListener("click", e => {
     fetchAndPopulate(task._id);
+    modal.classList.remove("hide");
   });
 
   // Append the clone to the parent
@@ -63,10 +66,10 @@ function fetchAndPopulate(id) {
     .then(tasks => {
       console.log(tasks);
       editForm.elements.task.value = tasks.task;
-      editForm.elements.day.value = tasks.day;
-      editForm.elements.time.value = tasks.time;
-      // editForm.elements.importantStatus.value = tasks.important;
-      editForm.elements.id.value = task._id;
+      // editForm.elements.day.value = tasks.day;
+      // editForm.elements.hour.value = tasks.hour;
+      // editForm.elements.status.value = tasks.status;
+      editForm.elements.id.value = tasks._id;
     });
 }
 
@@ -75,10 +78,10 @@ function post() {
     // task: "sleeeeeeeeepppppp",
     // date: "2019-09-27T23:50:31.030Z",
     // important: true
-    task: form.elements.task.value,
-    day: form.elements.date.value,
-    time: form.elements.time.value
-    // important: form.elements.importantStatus.value
+    task: form.elements.task.value
+    // day: form.elements.day.value,
+    // hour: form.elements.hour.value
+    // status: form.elements.status.value
   };
 
   const postData = JSON.stringify(data);
@@ -116,14 +119,14 @@ function deleteIt(id) {
 
 function put() {
   let data = {
-    task: editForm.elements.task.value,
-    day: editForm.elements.date.value,
-    time: editForm.elements.time.value
-    // important: editForm.elements.importantStatus.value
+    task: editForm.elements.task.value
+    // day: editForm.elements.day.value,
+    // hour: editForm.elements.hour.value
+    // status: editForm.elements.status.value
   };
 
   let postData = JSON.stringify(data);
-  const tasksID = formEdit.elements.id.value;
+  const tasksID = editForm.elements.id.value;
   fetch("https://singers-373b.restdb.io/rest/todo/" + tasksID, {
     method: "put",
     headers: {
@@ -137,14 +140,13 @@ function put() {
     .then(updateTask => {
       //find the parent
       const parentElement = document.querySelector(
-        `.tasks[data-taskid="${updateTask._id}"]`
+        `.toDoListContainer[data-taskid="${updateTask._id}"]`
       );
       //update the dom
-      parentElement.querySelector(".task").textContent = updateTask.task;
-      parentElement.querySelector(".day").textContent = updateTask.day;
-      parentElement.querySelector(".time").textContent = updateSinger.time;
-      parentElement.querySelector(".importantStatus").textContent =
-        updateTask.important;
+      parentElement.querySelector(".taskName").textContent = updateTask.task;
+      // parentElement.querySelector(".day").textContent = updateTask.day;
+      // parentElement.querySelector(".hour").textContent = updateSinger.hour;
+      // parentElement.querySelector(".status").textContent = updateTask.status;
     });
 }
 
@@ -163,3 +165,9 @@ editForm.addEventListener("submit", evt => {
   evt.preventDefault();
   put();
 });
+
+document
+  .querySelector("#done")
+  .addEventListener("click", () => modal.classList.add("hide"));
+
+close.addEventListener("click", () => modal.classList.add("hide"));
