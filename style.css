@@ -1,299 +1,274 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  text-rendering: optimizeLegibility;
 }
 
 html {
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-image: url(images/q.jpg);
-    width: 100%;
-    height: 100%;
-    /* background-repeat: no-repeat; */
-    /* background-position: center; */
-    background-size: cover;
+  background-image: url(images/q.jpg);
+  width: 100%;
+  height: 100%;
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
+  background-size: cover;
 }
 
 #title {
-    font-family: 'Indie Flower', cursive;
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    font-size: 40px;
-
+  font-family: "Indie Flower", cursive;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  font-size: 40px;
 }
 
 #formContainer {
-    border-radius: 5px;
-    background-color: #f2f2f2e3;
-    padding: 20px;
-    width: 90%;
-    margin: auto;
-    margin-bottom: 15px;
+  border-radius: 5px;
+  background-color: #f2f2f2e3;
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 15px;
 }
 
 input {
-    width: 100%;
-    padding: 10px 20px;
-    margin: 5px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    outline: none;
+  width: 100%;
+  padding: 10px 20px;
+  margin: 5px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
 }
 
 .modal-content #formContainer {
-    width: 90%;
+  width: 90%;
 }
 
-
 .btnAddTask {
-    background-color: #0000ffd6;
-    color: white;
-    padding: 8px 10px;
-    border: none;
-    cursor: pointer;
-    width: 32%;
-    opacity: 0.8;
-    border-radius: 2%;
+  background-color: #0000ffd6;
+  color: white;
+  padding: 8px 10px;
+  border: none;
+  cursor: pointer;
+  width: 32%;
+  opacity: 0.8;
+  border-radius: 2%;
 }
 
 .done {
-    background-color: #008000c9;
-    color: white;
-    padding: 8px 10px;
-    border: none;
-    cursor: pointer;
-    width: 42%;
-    opacity: 0.8;
-    border-radius: 2%;
-    margin-top: 10px;
+  background-color: #008000c9;
+  color: white;
+  padding: 8px 10px;
+  border: none;
+  cursor: pointer;
+  width: 42%;
+  opacity: 0.8;
+  border-radius: 2%;
+  margin-top: 10px;
 }
-
 
 .toDoList {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(253px, 1fr));
-    grid-gap: 1em;
-    padding-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(253px, 1fr));
+  grid-gap: 1em;
+  padding-top: 10px;
 }
 
-
 .btnRemoveTask {
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    left: 0px;
-    bottom: 0;
-    background-image: url(images/Trash-icon.png);
-    width: 25px;
-    height: 25px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: transparent;
-    margin: 4px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  left: 0px;
+  bottom: 0;
+  background-image: url(images/Trash-icon.png);
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+  margin: 4px;
 }
 
 .btnEditTask {
-    border: none;
-    cursor: pointer;
-    background-image: url(images/Edit.png);
-    width: 25px;
-    height: 25px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: transparent;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 4px;
+  border: none;
+  cursor: pointer;
+  background-image: url(images/Edit.png);
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 4px;
 }
 
-
-
 .toDoListContainer {
-    text-decoration: none;
-    color: #000;
-    background: #ffc;
-    display: block;
-    height: 12em;
-    width: 12em;
-    padding: 1em;
-    margin-bottom: 15px;
-    -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
-    -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
-    box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
-    -moz-transition: -moz-transform .15s linear;
-    -o-transition: -o-transform .15s linear;
-    -webkit-transition: -webkit-transform .15s linear;
-    -webkit-transform: rotate(-6deg);
-    -o-transform: rotate(-6deg);
-    -moz-transform: rotate(-6deg);
+  text-decoration: none;
+  color: #000;
+  background: #ffc;
+  display: block;
+  height: 12em;
+  width: 12em;
+  padding: 1em;
+  margin-bottom: 15px;
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  -webkit-transition: -webkit-transform 0.15s linear;
+  -webkit-transform: rotate(-6deg);
 }
 
 .toDoListBg {
-    margin: 0 auto;
-    float: left;
+  margin: 0 auto;
+  float: left;
 }
 
 .taskName {
-    font-size: 14px;
-    font-weight: bold;
-    padding-bottom: 10px;
-    font-family: "Reenie Beanie", arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  font-family: "Reenie Beanie", arial, sans-serif;
+  transform: translateZ(0);
 }
 
 .toDoListBg:nth-child(even) .toDoListContainer {
-    -o-transform: rotate(4deg);
-    -webkit-transform: rotate(4deg);
-    -moz-transform: rotate(4deg);
-    position: relative;
-    top: 5px;
-    background: #cfc;
+  -webkit-transform: rotate(4deg);
+  position: relative;
+  top: 5px;
+  background: #cfc;
 }
 
 .toDoListBg:nth-child(3n) .toDoListContainer {
-    -o-transform: rotate(-3deg);
-    -webkit-transform: rotate(-3deg);
-    -moz-transform: rotate(-3deg);
-    position: relative;
-    top: -5px;
-    background: #ccf;
+  -webkit-transform: rotate(-3deg);
+  position: relative;
+  top: -5px;
+  background: #ccf;
 }
 
 .toDoListBg:nth-child(5n) .toDoListContainer {
-    -o-transform: rotate(5deg);
-    -webkit-transform: rotate(5deg);
-    -moz-transform: rotate(5deg);
-    position: relative;
-    top: -10px;
+  -webkit-transform: rotate(5deg);
+  position: relative;
+  top: -10px;
 }
 
 .toDoListContainer:hover,
 .toDoListContainer:focus {
-    box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-    -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-    -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-    -webkit-transform: scale(1.25);
-    -moz-transform: scale(1.25);
-    -o-transform: scale(1.25);
-    position: relative;
-    z-index: 5;
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  -webkit-transform: scale(1.25);
+  position: relative;
+  z-index: 5;
 }
-
-
 
 /* ////////  Modal ///////*/
 
 .modal-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    overflow: auto;
-    z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: auto;
+  z-index: 100;
 }
 
 .modal-content {
-    background-color: white;
-    width: 78%;
-    height: 50%;
-    margin: auto;
-    margin-top: 20%;
-    padding: 1em;
-    text-align: center;
-    padding-top: 40px;
+  background-color: white;
+  width: 78%;
+  height: 50%;
+  margin: auto;
+  margin-top: 20%;
+  padding: 1em;
+  text-align: center;
+  padding-top: 40px;
 }
 
 /* /// Close Button /// */
 .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 30px;
-    font-weight: bold;
-    margin-right: -6px;
-    margin-top: -40px;
+  color: #aaaaaa;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: -6px;
+  margin-top: -40px;
 }
 
 .close:hover {
-    color: red;
-    cursor: pointer;
+  color: red;
+  cursor: pointer;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
-
-
 
 /* ////////  Media  ///////*/
 @media (min-width: 650px) {
-    #formContainer {
-        width: 80%;
-    }
+  #formContainer {
+    width: 80%;
+  }
 
-    .modal-content #formContainer {
-        width: 90%;
-    }
+  .modal-content #formContainer {
+    width: 90%;
+  }
 
-
-    /* .modal-content {
+  /* .modal-content {
         width: 78%;
         height: 50%;
         margin-top: 20%;
         padding-top: 40px;
     } */
-
 }
 
 @media (min-width: 800px) {
-    #formContainer {
-        width: 70%;
-    }
+  #formContainer {
+    width: 70%;
+  }
 
-    .modal-content #formContainer {
-        width: 90%;
-    }
+  .modal-content #formContainer {
+    width: 90%;
+  }
 
-    .modal-content {
-        margin-top: 15%;
-        padding-top: 45px;
-    }
+  .modal-content {
+    margin-top: 15%;
+    padding-top: 45px;
+  }
 }
 
 @media (min-width: 1000px) {
-    #formContainer {
-        width: 500px;
-    }
+  #formContainer {
+    width: 500px;
+  }
 
-    .modal-content #formContainer {
-        width: 500px;
-    }
+  .modal-content #formContainer {
+    width: 500px;
+  }
 
-    .modal-content {
-        margin-top: 13%;
-        padding-top: 45px;
-        width: 600px;
-        height: 300px;
-    }
+  .modal-content {
+    margin-top: 13%;
+    padding-top: 45px;
+    width: 600px;
+    height: 300px;
+  }
 
-    .done {
-        width: 120px;
-    }
+  .done {
+    width: 120px;
+  }
 
-    .btnAddTask {
-        width: 120px;
-    }
+  .btnAddTask {
+    width: 120px;
+  }
 }

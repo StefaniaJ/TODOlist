@@ -95,8 +95,10 @@ function post() {
     body: postData
   })
     .then(res => res.json())
-    .then(data => console.log(data));
-  addTasksToTheDOM(data);
+    .then(data => {
+      addTasksToTheDOM(data);
+    });
+  form.elements.task.value = "";
 }
 
 function deleteIt(id) {
